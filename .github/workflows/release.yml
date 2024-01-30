@@ -10,20 +10,41 @@ env:
   CARGO_TERM_COLOR: always
 
 jobs:
-  build:
-
+  linux:
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
-    - name: Build Linux
+    - name: Install target
+      run: rustup target add x86_64-unknown-linux-gnu
+    - name: Build
       run: cargo build --release --target=x86_64-unknown-linux-gnu
-    - name: Build Windows
-      run: cargo build --release --target x86_64-pc-windows-gnu
     - name: Create release
       uses: actions/create-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: ${{ github.run_number }}
-        release_name: ${{ github.run_number }}
+        tag_name: Linux-Release
+        release_name: Linux-${{ github.run_number }}
+
+        
+  windows:
+    runs-on: windows-latest
+
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install target
+      run: rustup target add x86_66-pc-windows-gnu
+    - name: Build
+      run: cargo build --release --target=x86_66-pc-windows-gnu
+    - name: Create release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: Windows-Release
+        release_name: Windows-${{ github.run_number }}
