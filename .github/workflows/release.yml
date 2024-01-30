@@ -46,7 +46,7 @@ jobs:
     - name: Upload binary
       uses: actions/upload-artifact@v3
       with:
-        name: bar-rs.exe
+        name: bar-rs
         path: target/x86_64-pc-windows-gnu/release/bar-rs.exe
       
 
@@ -65,4 +65,4 @@ jobs:
         #name: ${{  github.ref_name }}
         name: ${{ github.run_number }}
         tag: test
-        artifacts: "bar-rs/bar-rs/bar-rs,bar-rs/bar-rs/bar-rs.exe"
+        artifacts: "bar-rs/*"
