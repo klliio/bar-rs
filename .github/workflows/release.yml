@@ -61,4 +61,5 @@ jobs:
       with:
         #name: ${{  github.ref_name }}
         name: test
+        tag: test
         artifacts: "LICENSE-*,bar-rs*"
