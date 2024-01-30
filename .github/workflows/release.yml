@@ -63,4 +63,4 @@ jobs:
         #name: ${{  github.ref_name }}
         name: ${{ github.run_number }}
         tag: test
-        artifacts: "LICENSE-*,bar-rs/bar-rs/*"
+        artifacts: "LICENSE-*,bar-rs/bar-rs/bar-rs,bar-rs/bar-rs/bar-rs.exe"
