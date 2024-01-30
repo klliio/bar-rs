@@ -1,9 +1,14 @@
 name: release
 
+#on:
+#  push:
+#    tags:
+#    - 'v*'
 on:
   push:
-    tags:
-    - 'v*'
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
 
 env:
   CARGO_TERM_COLOR: always
