@@ -20,7 +20,7 @@ struct Args {
     #[arg(long, default_value_t = '█')]
     fill_char: char,
 
-    // Charater to show empty bar
+    // Character to show empty bar
     #[arg(long, default_value_t = '▓')]
     empty_char: char,
 }
