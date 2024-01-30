@@ -51,6 +51,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "bar-rs"
+version = "0.1.0"
+dependencies = [
+ "clap",
+]
+
+[[package]]
 name = "clap"
 version = "4.4.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -109,13 +116,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "134c189feb4956b20f6f547d2cf727d4c0fe06722b20a0eec87ed445a97f92da"
 dependencies = [
  "unicode-ident",
-]
-
-[[package]]
-name = "progressbar-rs"
-version = "0.1.0"
-dependencies = [
- "clap",
 ]
 
 [[package]]

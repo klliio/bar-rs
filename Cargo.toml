@@ -1,5 +1,5 @@
 [package]
-name = "progressbar-rs"
+name = "bar-rs"
 version = "0.1.0"
 edition = "2021"
 
